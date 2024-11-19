@@ -4,7 +4,7 @@ using System.Net.Http.Headers;
 using System.Runtime.ConstrainedExecution;
 
 //1) Usando dei dati in scaffolding, creare una lista di studenti con nome, cognome, anno, voto_medio, cognome_Docente
-	
+	///////
 var studenti = new List<Studente>()
 {
     new Studente { Nome = "Luca", Cognome = "Rossi", Anno = 2020, VotoMedio = 28.5, CognomeDocente = "Bianchi" },
