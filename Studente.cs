@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,7 +35,10 @@ namespace Esercizio1
         }
         public int Eta()
         {
-            return 0;
+            int ris = 0;
+            if(Nome =="Andrea")
+               ris +=5;
+            return ris;
         }
     }
 }
