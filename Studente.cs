@@ -29,7 +29,7 @@ namespace Esercizio1
                 $"Iscritto al: {Anno}anno\n" +
                 $"Media: {VotoMedio}\n" +
                 $"Insegnante di riferimento: Prof.{CognomeDocente}" +
-                $"----------------------";
+                $"---------------------------------------------------";
                 
         }
     }
