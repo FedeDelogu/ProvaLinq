@@ -31,6 +31,7 @@ var studenti = new List<Studente>()
 //    Console.WriteLine(s.Nominativo);
 //Raggruppati per voto medio, con un ordine decrescente di voto gli studenti
 var query2 = studenti.GroupBy(s => s.VotoMedio).OrderByDescending(g=>g.Key).ToList();
+<<<<<<< Updated upstream
 //foreach (var gruppo in query2)
 //{
 //    Console.WriteLine($"voto medio: {gruppo.Key}");
@@ -53,6 +54,29 @@ var query2 = studenti.GroupBy(s => s.VotoMedio).OrderByDescending(g=>g.Key).ToLi
 //foreach (var ann in VotoAnno)
 
 //    Console.WriteLine($"Voti per anno: {ann.Anno} {ann.medie}");
+=======
+foreach (var gruppo in query2)
+{
+    Console.WriteLine($"voto medio: {gruppo.Key}");
+    foreach (var student in gruppo)
+        Console.WriteLine(student.Nominativo);
+    }
+//4)Il nome degli studenti più scarsi
+var peggiori = query2.Last().ToList();
+foreach (var s in peggiori)
+{ Console.WriteLine(s.Nominativo + " " + s.VotoMedio); }
+//Il voto medio della scuola
+    var mediaTot = studenti.Average(s => s.VotoMedio);
+Console.WriteLine($"media della scuola: {Math.Round(mediaTot)}");
+//5) Il voto medio di ogni anno
+var VotoAnno = studenti.GroupBy(v => v.Anno).Select(g => new
+{
+    Anno = g.Key,
+    medie = g.Average(s => s.VotoMedio)
+});
+foreach (var ann in VotoAnno)
+    Console.WriteLine($"Voti per anno: {ann.Anno} {ann.medie}");
+>>>>>>> Stashed changes
 
 
 //		- Il voto più alto di ogni anno
@@ -74,10 +98,14 @@ var Professori = studenti.GroupBy(s => s.CognomeDocente);
 
    var massimo = Professori.Max(coppia => coppia.Count());
 var PiuStudenti = Professori.First(coppia => coppia.Count() == massimo).Key;
+<<<<<<< Updated upstream
 
 //var tot = Professori.OrderBy(coppia => coppia.Max());
 
 
+=======
+var tot = Professori.OrderBy(coppia => coppia.Max());
+>>>>>>> Stashed changes
     Console.WriteLine($"{PiuStudenti} {massimo}");
 
 
